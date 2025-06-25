@@ -25,9 +25,10 @@ export default function Page() {
                   Check out my latest work
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  I&apos;ve worked on a variety of projects, from simple
-                  websites to complex web applications. Here are a few of my
-                  favorites.
+                  I&apos;ve built multiple startups single-handedly, from concept to launch. 
+                  From AI-powered sales automation platforms (WarpAI) to educational technology solutions (Edumob E-learning), 
+                  I love turning ideas into scalable products. Each project represents a journey 
+                  of learning, growth, and innovation in the world of technology and entrepreneurship.
                 </p>
               </div>
             </div>
@@ -66,36 +67,33 @@ export default function Page() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                  Hackathons
+                  Startup Journey
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  I like building things
+                  From idea to execution
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  During my time in university, I attended{" "}
-                  {DATA.hackathons.length}+ hackathons. People from around the
-                  country would come together and build incredible things in 2-3
-                  days. It was eye-opening to see the endless possibilities
-                  brought to life by a group of motivated and passionate
-                  individuals.
+                  My entrepreneurial journey spans over 8+ years, from co-founding Edumob E-learning 
+                  in 2014 to building WarpAI in 2025. Each startup has taught me valuable lessons 
+                  about product development, market validation, and scaling technology solutions.
                 </p>
               </div>
             </div>
           </BlurFade>
           <BlurFade delay={BLUR_FADE_DELAY * 14}>
             <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
-              {DATA.hackathons.map((project, id) => (
+              {DATA.work.filter(job => job.badges.some(badge => badge === "Founder" || badge === "Co-Founder")).map((startup, id) => (
                 <BlurFade
-                  key={project.title + project.dates}
+                  key={startup.title + startup.company}
                   delay={BLUR_FADE_DELAY * 15 + id * 0.05}
                 >
                   <HackathonCard
-                    title={project.title}
-                    description={project.description}
-                    location={project.location}
-                    dates={project.dates}
-                    image={project.image}
-                    links={project.links}
+                    title={`${startup.title} at ${startup.company}`}
+                    description={startup.highlight.message}
+                    location={startup.location}
+                    dates={`${startup.start}${'end' in startup && startup.end ? ` - ${startup.end}` : ' - Present'}`}
+                    image={startup.logoUrl}
+                    links={[]}
                   />
                 </BlurFade>
               ))}

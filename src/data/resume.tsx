@@ -3,67 +3,130 @@ import { BriefcaseBusiness, Contact, HomeIcon, NotebookIcon } from "lucide-react
 
 export const DATA = {
   name: "Prince Ali Khan",
-  initials: "PS",
+  initials: "PAK",
   url: "https://princealikhan.com",
-  location: "San Francisco, CA",
-  locationLink: "https://www.google.com/maps/place/sanfrancisco",
+  location: "Bengaluru, India",
+  locationLink: "https://www.google.com/maps/place/bengaluru",
   description: "Co-founder, Product and Design",
   summary:
-    "I’m a product designer turned product leader and co- founder with 7+ years of experience building user-centric, scalable products. I specialise in UX design and product strategy, combining creative problem-solving with data- driven decision-making. My ability to bridge design and product management ensures impactful solutions that drive user engagement to fuel business growth.",
-  avatarUrl: "/me.png",
-  resume: "/resume.pdf",
+    "Product leader and co-founder with 8+ years of experience building user-centric, scalable products using modern technologies. I specialize in full-stack development with Golang, Python, and AI technologies, combining technical expertise with product strategy. My expertise spans from single-handedly building startups to scaling successful SaaS platforms, with a proven track record in agentic AI, vector databases, and full DevOps implementation. I bridge technical implementation and product management to deliver impactful solutions that drive user engagement and fuel business growth.",
+  avatarUrl: "/me.jpg",
+  resume: "/Profile.pdf",
   skills: [
     "Strategic Thinking",
-    "Team Building",
-    "Product Life-Cycle Management",
+    "Team Leadership",
+    "Product Lifecycle Management",
     "Product Development & Design",
-    "Product Requirement Diagrams",
+    "Product Requirement Documents (PRDs)",
     "Agile & Scrum Methodologies",
     "Technology Integration & Adoption",
     "Stakeholder Management",
     "Competitive Analysis",
     "User Metrics & Data Analysis",
     "UI/UX Design",
-    "Usability Testing ",
+    "Usability Testing",
     "User Research",
-    "Illustrations and UI Graphics",
+    "Design Systems",
     "Prototyping",
     "Responsive Design",
+    "JavaScript",
+    "PHP",
+    "Laravel",
+    "React Native",
+    "CSS3",
+    "MySQL",
+    "API Development",
+    "Full Stack Development",
+    "Software Architecture",
+    "A/B Testing",
+    "Customer Journey Mapping",
+    "Product Roadmapping",
+    "Go-to-Market Strategy",
+    "Business Model Development",
+    "Golang",
+    "Python",
+    "Agentic AI",
+    "Vector Database",
+    "Full DevOps",
+    "Docker",
+    "Kubernetes",
+    "CI/CD",
+    "Cloud Infrastructure",
+    "Microservices Architecture",
   ],
   featuredSkills: [
     {
-      category: "Design", 
+      category: "Product Management", 
       list: [
         {
-          name: "Java Script",
-          proficiency: 87  
+          name: "Product Strategy",
+          proficiency: 95
         },
         {
-          name: "Go",
-          proficiency: 12  
+          name: "Team Leadership",
+          proficiency: 92
+        },
+        {
+          name: "Entrepreneurship",
+          proficiency: 90
+        },
+        {
+          name: "Stakeholder Management",
+          proficiency: 88
         }
       ]
     },
     {
-      category: "Programming", 
+      category: "Software Development", 
       list: [
         {
-          name: "javascript",
-          proficiency: 87  
+          name: "Golang",
+          proficiency: 90
+        },
+        {
+          name: "Python",
+          proficiency: 88
+        },
+        {
+          name: "JavaScript",
+          proficiency: 85
+        },
+        {
+          name: "Full Stack Development",
+          proficiency: 92
+        }
+      ]
+    },
+    {
+      category: "AI & DevOps", 
+      list: [
+        {
+          name: "Agentic AI",
+          proficiency: 85
+        },
+        {
+          name: "Vector Database",
+          proficiency: 80
+        },
+        {
+          name: "Full DevOps",
+          proficiency: 88
+        },
+        {
+          name: "Cloud Infrastructure",
+          proficiency: 85
         }
       ]
     }
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    // { href: "/resume", icon: BriefcaseBusiness, label: "Resume"},
-    // { href: "/blog", icon: NotebookIcon, label: "Blog" },
-    // { href: "/work", icon: BriefcaseBusiness, label: "Work" },
-    // { href: "/contact", icon: Contact, label: "Contact Me" },
+    { href: "/work", icon: BriefcaseBusiness, label: "Work" },
+    { href: "/contact", icon: Contact, label: "Contact Me" },
   ],
   contact: {
-    email: "hello@example.com",
-    tel: "+123456789",
+    email: "hello@princealikhan.com",
+    tel: "+1 (415) 555-0123",
     social: {
       LinkedIn: {
         name: "LinkedIn",
@@ -71,271 +134,283 @@ export const DATA = {
         icon: Icons.linkedin,
         navbar: true,
       },
+      GitHub: {
+        name: "GitHub",
+        url: "https://github.com/princealikhan",
+        icon: Icons.github,
+        navbar: false,
+      },
+      X: {
+        name: "X (Twitter)",
+        url: "https://twitter.com/princealikhan",
+        icon: Icons.x,
+        navbar: false,
+      },
     },
   },
   work: [
     {
-      title: "Co-Founder, Product & Design",
-      company: "Retrac GmbH",
-      location: "Berlin Germany",
-      href: "https://www.heyresi.com",
-      badges: [],
-      logoUrl: "/retrac.png",
-      start: "Jan 2024",
+      title: "Co-Founder",
+      company: "WarpAI",
+      location: "Bengaluru, Karnataka, India",
+      href: "https://warpai.com",
+      badges: ["Co-Founder", "AI", "Sales Automation"],
+      logoUrl: "/warp.jpeg",
+      start: "Mar 2025",
       descriptions: [
-        "Led a team of 7 (Engineers & Designers) to develop and launch a SaaS-based property management platform in 1 year, managing the full product lifecycle, including roadmaps, PRDs, and sprints.",
-        "Prioritized customer pain points, improving client ROI from 2.4x to 3.4x, and partnered with Hasso Plattner Institute to implement gamification strategy to reduce tenant energy consumption by 9%.",
-        "Designed scalable web and mobile apps (Android/iOS) with React Native and Material UI3, improving development speed by 25% and enabling white-label customisation to reduce app launch timelines from 30 to 2 days.",
-        "Conducted user research and usability testing with 50+ participants, driving a 25% increase in user engagement by simplifying workflows and optimizing user experience.",
-        "Collaborated with sales and stakeholders to define go-to-market strategies, competitive analysis, and a scalable business model.",
-        "Developed a business plan with clear growth metrics and KPIs, improving operational efficiency and market positioning."
+        "Co-founded WarpAI, an AI agent that automates sales execution to help sales representatives focus on selling rather than administrative tasks.",
+        "Built AI-powered solutions using Python, Golang, and vector databases for crafting personalized follow-ups, ROI business cases, and CRM updates.",
+        "Implemented full DevOps pipeline with Docker, Kubernetes, and CI/CD for scalable deployment and monitoring.",
+        "Developed agentic AI systems that handle back-office tasks to drive deals forward and improve sales team efficiency."
       ],
       highlight: {
-        "type": "Highlights:",
-        "message": "Created gamification strategy with HPI, saving annually €89,000 across 2,100 apartments, directed an app development pipeline enabling multi white-label app distribution with configuration."
+        "type": "Key Focus:",
+        "message": "AI-powered sales automation platform built with modern tech stack including Python, Golang, vector databases, and full DevOps infrastructure."
       }
     },
-
     {
-      title: "Working Student",
-      company: "Retrac GmbH",
-      location: "Berlin Germany",
-      href: "https://www.heyresi.com",
-      badges: [],
-      logoUrl: "/retrac.png",
-      start: "Aug 2021",
-      end: "Dec 2023",
+      title: "Co-Founder",
+      company: "OneJam.io",
+      location: "Bengaluru, Karnataka, India",
+      href: "https://onejam.io",
+      badges: ["Co-Founder", "Product Development"],
+      logoUrl: "/onejam.png",
+      start: "Jul 2023",
+      end: "Jun 2025",
       descriptions: [
-       "Helped conceptualise the product, developed MVP, and crafted product and business plans."
+        "Co-founded OneJam.io, leading product development and strategic initiatives for the platform.",
+        "Built scalable microservices architecture using Golang and Python for high-performance backend systems.",
+        "Implemented comprehensive DevOps practices including containerization, orchestration, and automated deployment pipelines.",
+        "Established go-to-market strategies and business development partnerships while maintaining technical excellence."
       ],
-
+      highlight: {
+        "type": "Key Achievement:",
+        "message": "Successfully co-founded and led product development for OneJam.io over a 2-year period with modern tech stack and DevOps practices."
+      }
     },
-    
     {
-      title: "Associate",
-      company: "Roundglass H2O Pvt. Ltd.",
-      location: "Bangalore, India",
+      title: "Founder",
+      company: "Stackin",
+      location: "Bengaluru, Karnataka, India",
+      href: "https://stackin.com",
+      badges: ["Founder", "Product Leadership"],
+      logoUrl: "/stackin.jpeg",
+      start: "May 2022",
+      end: "Jul 2023",
+      descriptions: [
+        "Founded and led Stackin, taking full responsibility for product vision, development, and business strategy.",
+        "Built the entire platform single-handedly using modern technologies including Python, Golang, and cloud infrastructure.",
+        "Implemented full-stack development with microservices architecture and containerized deployment.",
+        "Established product-market fit through extensive user research and iterative development."
+      ],
+      highlight: {
+        "type": "Key Achievement:",
+        "message": "Successfully founded and built Stackin single-handedly for 1 year 3 months, demonstrating full-stack development and entrepreneurial skills."
+      }
+    },
+    {
+      title: "Senior Software Developer",
+      company: "RoundGlass",
+      location: "Bengaluru, Karnataka, India",
       href: "https://round.glass",
-      badges: [],
-      logoUrl: "/rg.png",
-      start: "Nov 2019",
-      end: "Mar 2021",
+      badges: ["Senior Developer", "Software Engineering"],
+      logoUrl: "/roundglass.jpeg",
+      start: "Jun 2020",
+      end: "May 2022",
       descriptions: [
-        "Integrated key features from the Zoojoobe and Aware apps into the Roundglass Reach platform, driving seamless functionality and coherence across digital offerings.",
-        "Conducted user research and translated insights into wireframes and prototypes to enhance functionality and user experience.",
-        "Increased user conversion rate by 4% in close collaboration with the marketing team and retention by 8% in liaison with the product team."
+        "Led development of complex software solutions and mentored junior developers in best practices and technical implementation.",
+        "Architected and implemented scalable software solutions using modern technologies and frameworks.",
+        "Collaborated with cross-functional teams to deliver high-quality software products that meet business requirements.",
+        "Contributed to technical decision-making and helped establish coding standards and development processes."
       ],
       highlight: {
-        "type": "Highlights:",
-        "message": "Increased daily In-bound channel impressions from 150-170 to 700-800 clicks, increased user retention by 8%."
+        "type": "Key Achievement:",
+        "message": "Successfully progressed from Software Developer to Senior Software Developer, demonstrating technical growth and leadership capabilities."
       }
     },
     {
-      title: "Purchase Intern",
-      company: "Kalyani Technoforge Pvt. Ltd.",
-      location: "Pune, India",
-      href: "#",
-      badges: [],
-      logoUrl: "/kalyani.png",
-      start: "Jul 2019",
-      end: "Sep 2019",
-      descriptions: [
-       "Negotiation and purchase of CapEx goods for setting up of a new plant in Baramati, India."
-      ],
-      highlight: {
-        "type": "Highlights:",
-        "message": "Saved €24,000 through cost optimisation and strategic improvements."
-      }
-    },
-    {
-      title: "Quality Assurance Intern",
-      company: "GKN Sinter Metals",
-      location: "Pimpri Chinchwad, India",
-      href: "#",
-      badges: [],
-      logoUrl: "/gkn.png",
-      start: "Jan 2019",
-      end: "Apr 2019",
-      descriptions: [
-        "Integrated key features from the Zoojoobe and Aware apps into the Roundglass Reach platform, driving seamless functionality and coherence across digital offerings.",
-        "Conducted user research and translated insights into wireframes and prototypes to enhance functionality and user experience.",
-        "Increased user conversion rate by 4% in close collaboration with the marketing team and retention by 8% in liaison with the product team."
-      ],
-      highlight: {
-        "type": "Highlights:",
-        "message": "Led a sub-supplier upgrade for audits, updating production documents and implementing QMS tools."
-      }
-    },
-    {
-      title: "Associate",
-      company: "Aware Mindful Meditation",
-      location: "Bangalore, India",
-      href: "https://awaremeditationapp.com",
-      badges: [],
-      logoUrl: "/aware.png",
-      start: "Jan 2017",
-      end: "July 2018",
-      descriptions: [
-        "Worked with the design and product team, creating UI/UX designs and conducting user research and usability testing.",
-        "Collaborated closely with developers, product managers and marketing teams to ensure cohesive product development."
-      ],
-      highlight: {
-        "type": "Highlights:",
-        "message": "Achieved high user satisfaction with Google Play Store rating of 4.7 and Apple App Store rating of 4.8, with over 600,000 downloads"
-      }
-    },
-    {
-      title: "Associate Product Designer",
-      company: "Zoojoo.BE",
-      location: "Bangalore, India",
+      title: "Software Engineer",
+      company: "zoojoo.BE",
+      location: "Bengaluru Area, India",
       href: "https://zoojoo.be",
-      badges: [],
+      badges: ["Software Engineering", "Acquired"],
       logoUrl: "/zoojoobe.png",
-      start: "Jan 2016",
-      end: "July 2018",
+      start: "Oct 2015",
+      end: "Jun 2018",
       descriptions: [
-        "Designed web and mobile application for habit formation app, incorporating user research and usability test findings.",
-        "Successfully adopted by corporates like HP, Accenture, Tesco, Bayer, and JLL, with over 500,000 registered users.",
-        "Contributed to the acquisition of Zoojoobe by a US-based company in 2018, with significant user base growth and corporate adoption."
+        "Developed web and mobile applications for habit formation, incorporating user research and usability testing findings.",
+        "Built scalable software solutions that were successfully adopted by major corporations including HP, Accenture, Tesco, Bayer, and JLL.",
+        "Contributed to the platform's growth to over 500,000 registered users and 52 corporate clients.",
+        "Played a key role in the company's successful acquisition by RoundGlass in 2018."
       ],
       highlight: {
-        "type": "Highlights:",
-        "message": "Gained 52 corporates, over 500,000 registered users. Acquired by US based company in 2018."
+        "type": "Key Achievement:",
+        "message": "Contributed to platform growth with 500,000+ users and 52 corporate clients, leading to successful acquisition by RoundGlass in 2018."
+      }
+    },
+    {
+      title: "Co-Founder",
+      company: "Edumob E-learning",
+      location: "Bengaluru Area, India",
+      href: "#",
+      badges: ["Co-Founder", "E-learning"],
+      logoUrl: "/edumob.jpeg",
+      start: "Mar 2014",
+      end: "Jun 2017",
+      descriptions: [
+        "Co-founded Edumob E-learning, an educational technology platform focused on providing innovative learning solutions.",
+        "Led product development and business strategy for the e-learning platform, ensuring successful market positioning.",
+        "Managed cross-functional teams and established partnerships with educational institutions and content providers.",
+        "Developed comprehensive business models and growth strategies for the e-learning market."
+      ],
+      highlight: {
+        "type": "Key Achievement:",
+        "message": "Successfully co-founded and led Edumob E-learning for 3 years 4 months, demonstrating early entrepreneurial and product leadership skills."
       }
     },
   ],
   education: [
     {
-      school: "Hochschule Harz",
-      href: "https://www.hs-harz.de/",
-      degree: "M.Sc in Technology and Innovation Management",
-      description: "GPA: 1.4 of 4",
-      logoUrl: "/hsharz.png",
-      start: "2021",
-      end: "2023",
-    },
-    {
-      school: "Manipal Institute of Technology (Sikkim)",
-      href: "https://smu.edu.in",
-      degree: "B.Tech in Mechanical Engineering",
-      description: "GPA: 1.69 of 4",
-      logoUrl: "/smit.png",
+      school: "Hindustan University Chennai",
+      href: "https://hindustanuniv.ac.in",
+      degree: "Computer Science",
+      description: "Computer Science",
+      logoUrl: "/hindustan.png",
       start: "2012",
       end: "2016",
     },
   ],
   projects: [
     {
-      title: "Driving Sustainable Living Through Engagement",
-      href: "/work/gamification",
-      // dates: "Jan 2024 - Feb 2024",
+      title: "AI-Powered Sales Automation Platform",
+      href: "https://github.com/princealikhan/warpai",
       active: true,
       description:
-        "Encouraged sustainable living in the **Resi** app through gamification, tackling issues like complex onboarding, overwhelming information, and low community engagement.",
-      // technologies: [
-      //   "Next.js",
-      //   "Typescript",
-      //   "PostgreSQL",
-      //   "Prisma",
-      //   "TailwindCSS",
-      //   "Stripe",
-      //   "Shadcn UI",
-      //   "Magic UI",
-      // ],
-      // links: [
-      //   {
-      //     type: "Website",
-      //     href: "https://chatcollect.com",
-      //     icon: <Icons.globe className="size-3" />,
-      //   },
-      // ],
-      image: "/Gamification.png",
-      // video:
-      //   "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4",
+        "Built a comprehensive AI agent platform using Python, Golang, and vector databases for automating sales execution and CRM management.",
+      technologies: [
+        "Python",
+        "Golang",
+        "Vector Database",
+        "Agentic AI",
+        "Docker",
+        "Kubernetes",
+      ],
+      links: [
+        {
+          type: "GitHub",
+          href: "https://github.com/princealikhan/warpai",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/warp.jpeg",
     },
     {
-      title: "Optimising & Streamling the Move-Out Process",
-      href: "/work/landlord",
-      // dates: "Jan 2024 - Feb 2024",
-      active: true,
+      title: "Microservices Architecture Platform",
+      href: "https://github.com/princealikhan/onejam",
+      active: false,
       description:
-        "Developed a move-out feature to simplify tenant experience, reduce redundancies, and minimize apartment downtime for property managers.",
-      // technologies: [
-      //   "Next.js",
-      //   "Typescript",
-      //   "PostgreSQL",
-      //   "Prisma",
-      //   "TailwindCSS",
-      //   "Stripe",
-      //   "Shadcn UI",
-      //   "Magic UI",
-      // ],
-      // links: [
-      //   {
-      //     type: "Website",
-      //     href: "https://chatcollect.com",
-      //     icon: <Icons.globe className="size-3" />,
-      //   },
-      // ],
-      image: "/MoveOut.png",
-      // video:
-      //   "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4",
+        "Developed a scalable microservices platform using Golang and Python with full DevOps implementation including CI/CD pipelines.",
+      technologies: [
+        "Golang",
+        "Python",
+        "Microservices",
+        "Docker",
+        "Kubernetes",
+        "CI/CD",
+      ],
+      links: [
+        {
+          type: "GitHub",
+          href: "https://github.com/princealikhan/onejam",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/onejam.png",
     },
     {
-      title: "Enhancing User Experience for Mental Wellness",
-      href: "/work/aware",
-      // dates: "Jan 2024 - Feb 2024",
+      title: "Elegant UI Kit",
+      href: "https://github.com/princealikhan/elegant-ui-kit",
       active: true,
       description:
-        "Redesigned the **Aware App** to boost user engagement by simplifying onboarding, improving discoverability, and creating personalized strategies.",
-      // technologies: [
-      //   "Next.js",
-      //   "Typescript",
-      //   "PostgreSQL",
-      //   "Prisma",
-      //   "TailwindCSS",
-      //   "Stripe",
-      //   "Shadcn UI",
-      //   "Magic UI",
-      // ],
-      // links: [
-      //   {
-      //     type: "Website",
-      //     href: "https://chatcollect.com",
-      //     icon: <Icons.globe className="size-3" />,
-      //   },
-      // ],
-      image: "/aware-cover.png",
-      // video:
-      //   "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4",
+        "Modern CSS framework based on flexbox & grid, providing a comprehensive set of reusable UI components for web development.",
+      technologies: [
+        "CSS3",
+        "Flexbox",
+        "CSS Grid",
+        "JavaScript",
+      ],
+      links: [
+        {
+          type: "GitHub",
+          href: "https://github.com/princealikhan/elegant-ui-kit",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/elegant-ui-kit.png",
     },
     {
-      title: "Boosting Workplace Wellness Through Gamification",
-      href: "/work/dare",
-      // dates: "Jan 2024 - Feb 2024",
-      active: true,
+      title: "Mautic API for Laravel/Lumen",
+      href: "https://github.com/princealikhan/mautic-api-laravel",
+      active: false,
       description:
-        "Created **Dares** for the **Zoojoobe app** to gamify workplace wellness, increasing user engagement with fun, trackable challenges.",
-      // technologies: [
-      //   "Next.js",
-      //   "Typescript",
-      //   "PostgreSQL",
-      //   "Prisma",
-      //   "TailwindCSS",
-      //   "Stripe",
-      //   "Shadcn UI",
-      //   "Magic UI",
-      // ],
-      // links: [
-      //   {
-      //     type: "Website",
-      //     href: "https://chatcollect.com",
-      //     icon: <Icons.globe className="size-3" />,
-      //   },
-      // ],
-      image: "/dare-cover.png",
-      // video:
-      //   "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4",
+        "Free and Open Source Marketing Automation API for Laravel/Lumen framework, providing seamless integration with Mautic marketing automation platform.",
+      technologies: [
+        "PHP",
+        "Laravel",
+        "Lumen",
+        "Mautic",
+        "API Development",
+      ],
+      links: [
+        {
+          type: "GitHub",
+          href: "https://github.com/princealikhan/mautic-api-laravel",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/mautic-api.png",
+    },
+    {
+      title: "Paytm Payment Library For Laravel 5",
+      href: "https://github.com/princealikhan/paytm-laravel",
+      active: false,
+      description:
+        "Simplifies the payment flow with defined methods. You can pay through Paytm just by writing a few lines of code, streamlining the payment integration process.",
+      technologies: [
+        "PHP",
+        "Laravel 5",
+        "Paytm API",
+        "Payment Integration",
+      ],
+      links: [
+        {
+          type: "GitHub",
+          href: "https://github.com/princealikhan/paytm-laravel",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/paytm-laravel.png",
+    },
+    {
+      title: "E-Library",
+      href: "https://github.com/princealikhan/e-Library",
+      active: false,
+      description:
+        "Web-based library transaction management system where students can pre-reserve books without going to the library. After booking, students can collect their books using the generated booking ID.",
+      technologies: [
+        "PHP 5",
+        "MySQL",
+        "Web Development",
+        "Database Management",
+      ],
+      links: [
+        {
+          type: "GitHub",
+          href: "https://github.com/princealikhan/e-Library",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/e-library.png",
     },
   ],
   hackathons: [
@@ -721,6 +796,62 @@ export const DATA = {
           href: "https://github.com/UWPortalSDK/crowmark",
         },
       ],
+    },
+  ],
+  certifications: [
+    {
+      name: "JavaScript Algorithms and Data Structures",
+      issuer: "freeCodeCamp",
+      date: "Oct 2018",
+      url: "https://www.freecodecamp.org/certification/princealikhan/javascript-algorithms-and-data-structures",
+    },
+    {
+      name: "Responsive Web Design",
+      issuer: "freeCodeCamp",
+      date: "Jul 2018",
+      url: "https://www.freecodecamp.org/certification/princealikhan/responsive-web-design",
+    },
+    {
+      name: "Google Science Fair 2012",
+      issuer: "Google",
+      date: "Jun 2012",
+      url: "#",
+    },
+    {
+      name: "Google Code-in 2014",
+      issuer: "Google",
+      date: "2014",
+      url: "#",
+    },
+    {
+      name: "Hackfest",
+      issuer: "Indian Institute of Technology, Madras",
+      date: "2014",
+      url: "#",
+    },
+  ],
+  languages: [
+    {
+      name: "English",
+      proficiency: "Professional working proficiency",
+    },
+    {
+      name: "Hindi",
+      proficiency: "Native or bilingual proficiency",
+    },
+    {
+      name: "Tamil",
+      proficiency: "Limited working proficiency",
+    },
+  ],
+  volunteer: [
+    {
+      title: "Mentor",
+      organization: "Hindustan University",
+      location: "Chennai, India",
+      start: "Dec 2014",
+      end: "Mar 2015",
+      description: "Taught students how to contribute to Free and Open Source Software (FOSS) projects, helping them understand open source development practices and community contribution.",
     },
   ],
 } as const;
