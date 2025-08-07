@@ -73,7 +73,7 @@ export default function Page() {
                   From idea to execution
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  My entrepreneurial journey spans over10+ years, from co-founding Edumob E-learning
+                  My entrepreneurial journey spans over 10+ years, from co-founding Edumob E-learning
                   in 2014 to building WarpAI in 2025. Each startup has taught me valuable lessons
                   about product development, market validation, and scaling technology solutions.
                 </p>
