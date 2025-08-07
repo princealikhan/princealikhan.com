@@ -9,7 +9,7 @@ export const DATA = {
   locationLink: "https://www.google.com/maps/place/bengaluru",
   description: "Co-founder, Product and Design",
   summary:
-    "Product leader and co-founder with 8+ years of experience building user-centric, scalable products using modern technologies. I specialize in full-stack development with Golang, Python, and AI technologies, combining technical expertise with product strategy. My expertise spans from single-handedly building startups to scaling successful SaaS platforms, with a proven track record in agentic AI, vector databases, and full DevOps implementation. I bridge technical implementation and product management to deliver impactful solutions that drive user engagement and fuel business growth.",
+    "Product leader and co-founder with10+ years of experience building user-centric, scalable products using modern technologies. I specialize in full-stack development with Golang, Python, and AI technologies, combining technical expertise with product strategy. My expertise spans from single-handedly building startups to scaling successful SaaS platforms, with a proven track record in agentic AI, vector databases, and full DevOps implementation. I bridge technical implementation and product management to deliver impactful solutions that drive user engagement and fuel business growth.",
   avatarUrl: "/me.jpg",
   // resume: "/Profile.pdf",
   skills: [
