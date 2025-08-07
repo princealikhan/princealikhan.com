@@ -8,39 +8,39 @@ import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
-import {MarqueeDemo} from "@/components/tesxt";
+import { MarqueeDemo } from "@/components/tesxt";
 import { BLUR_FADE_DELAY } from "@/lib/utils";
 
 
 export default function Page() {
   return (
-    <main  className="max-w-4xl mx-auto py-12 sm:py-24 px-6 min-h-[100dvh] space-y-10">
-           <BlurFade delay={BLUR_FADE_DELAY * 11}>
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                  My Projects
-                </div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Check out my latest work
-                </h2>
-                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  I&apos;ve built multiple startups single-handedly, from concept to launch. 
-                  From AI-powered sales automation platforms (WarpAI) to educational technology solutions (Edumob E-learning), 
-                  I love turning ideas into scalable products. Each project represents a journey 
-                  of learning, growth, and innovation in the world of technology and entrepreneurship.
-                </p>
-              </div>
+    <main className="max-w-4xl mx-auto py-12 sm:py-24 px-6 min-h-[100dvh] space-y-10">
+      {/* <BlurFade delay={BLUR_FADE_DELAY * 11}>
+        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+          <div className="space-y-2">
+            <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+              My Projects
             </div>
-          </BlurFade>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+              Check out my latest work
+            </h2>
+            <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              I&apos;ve built multiple startups single-handedly, from concept to launch.
+              From AI-powered sales automation platforms (WarpAI) to educational technology solutions (Edumob E-learning),
+              I love turning ideas into scalable products. Each project represents a journey
+              of learning, growth, and innovation in the world of technology and entrepreneurship.
+            </p>
+          </div>
+        </div>
+      </BlurFade> */}
 
 
 
-      <section id="projects">
+      {/* <section id="projects">
         <div className="space-y-12 w-full py-12">
 
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
-            {DATA.projects.map((project:any, id) => (
+            {DATA.projects.map((project: any, id) => (
               <BlurFade
                 key={project.title}
                 delay={BLUR_FADE_DELAY * 12 + id * 0.05}
@@ -60,7 +60,7 @@ export default function Page() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
       <section id="hackathons">
         <div className="space-y-12 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 13}>
@@ -73,8 +73,8 @@ export default function Page() {
                   From idea to execution
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  My entrepreneurial journey spans over 8+ years, from co-founding Edumob E-learning 
-                  in 2014 to building WarpAI in 2025. Each startup has taught me valuable lessons 
+                  My entrepreneurial journey spans over 8+ years, from co-founding Edumob E-learning
+                  in 2014 to building WarpAI in 2025. Each startup has taught me valuable lessons
                   about product development, market validation, and scaling technology solutions.
                 </p>
               </div>

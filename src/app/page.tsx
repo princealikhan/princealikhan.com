@@ -66,7 +66,7 @@ export default function Page() {
                 {DATA.summary}
               </Markdown>
             </BlurFade>
-
+{/* 
             {DATA.resume && (
               <BlurFade delay={BLUR_FADE_DELAY * 5}>
                 <a href={DATA.resume} download="cv">
@@ -75,11 +75,11 @@ export default function Page() {
                   </RainbowButton>
                 </a>
               </BlurFade>
-            )}
+            )} */}
           </section>
   
 
-          <section>
+          {/* <section>
             <BlurFade delay={BLUR_FADE_DELAY * 6}>
               <h2 className="text-xl font-medium">
                 Check out my latest work
@@ -110,7 +110,7 @@ export default function Page() {
                 </div>
               </div>
             </section>
-          </section>
+          </section> */}
 
           <section id="skills">
             <div className="flex min-h-0 flex-col gap-y-3">
@@ -157,7 +157,7 @@ export default function Page() {
               ))}
             </div>
           </section>
-          <section id="education">
+          {/* <section id="education">
             <div className="flex min-h-0 flex-col gap-y-3">
               <BlurFade delay={BLUR_FADE_DELAY * 9}>
                 <h2 className="text-xl font-medium">Education</h2>
@@ -180,7 +180,7 @@ export default function Page() {
                 </BlurFade>
               ))}
             </div>
-          </section>
+          </section> */}
         </div>
       </div>
 

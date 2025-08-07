@@ -11,7 +11,7 @@ export const DATA = {
   summary:
     "Product leader and co-founder with 8+ years of experience building user-centric, scalable products using modern technologies. I specialize in full-stack development with Golang, Python, and AI technologies, combining technical expertise with product strategy. My expertise spans from single-handedly building startups to scaling successful SaaS platforms, with a proven track record in agentic AI, vector databases, and full DevOps implementation. I bridge technical implementation and product management to deliver impactful solutions that drive user engagement and fuel business growth.",
   avatarUrl: "/me.jpg",
-  resume: "/Profile.pdf",
+  // resume: "/Profile.pdf",
   skills: [
     "Strategic Thinking",
     "Team Leadership",
@@ -122,7 +122,7 @@ export const DATA = {
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/work", icon: BriefcaseBusiness, label: "Work" },
-    { href: "/contact", icon: Contact, label: "Contact Me" },
+    // { href: "/contact", icon: Contact, label: "Contact Me" },
   ],
   contact: {
     email: "hello@princealikhan.com",
