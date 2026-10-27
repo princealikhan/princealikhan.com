@@ -1,7 +1,8 @@
 import type { CSSProperties } from "react";
 import Image from "next/image";
 import { Button, PixelIcon, Window, ext } from "@/components/retro";
-import { Typewriter, type Line } from "@/components/typewriter";
+import { Terminal } from "@/components/terminal";
+import type { Line } from "@/components/typewriter";
 import { site } from "@/data/site";
 
 const order = (i: number) => ({ "--i": i }) as CSSProperties;
@@ -25,7 +26,6 @@ export default function Page() {
         ),
       };
     }),
-    { text: "$ " },
   ];
 
   return (
@@ -54,14 +54,17 @@ export default function Page() {
             bodyClass="!p-2"
             style={order(2)}
           >
-            <Image src="/me.jpg" alt={site.name} width={400} height={400} priority className="scan block w-full" />
+            <label className="flip block cursor-pointer" title="flip">
+              <input type="checkbox" className="sr-only" aria-label="flip the portrait" />
+              <Image src="/me.jpg" alt={site.name} width={400} height={400} priority className="scan block w-full" />
+            </label>
           </Window>
         </div>
       </section>
 
       <div className="mx-auto mt-12 max-w-[760px] space-y-10 px-4">
         <Window title="now.sh" dark className="boot" style={order(3)}>
-          <Typewriter lines={lines} />
+          <Terminal lines={lines} />
           <div className="mt-5">
             <Button href={site.links.x}>
               <PixelIcon name="x" />

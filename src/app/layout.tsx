@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { IBM_Plex_Mono, IBM_Plex_Sans, Silkscreen } from "next/font/google";
+import { CrtToggle } from "@/components/crt-toggle";
+import { Eggs } from "@/components/eggs";
 import { PixelIcon, ext } from "@/components/retro";
 import { site } from "@/data/site";
 import "./globals.css";
@@ -18,12 +20,13 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-const ticker = ["uptime 12+ yrs", site.location, "building deepsmith.ai", "some of it didn't make it"].join("  ·  ") + "  ·  ";
+const ticker = ["uptime 12+ yrs", site.location, "building deepsmith.ai", "type help in now.sh"].join("  ·  ") + "  ·  ";
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${pixel.variable} ${mono.variable} ${sans.variable}`}>
       <body className="flex min-h-screen flex-col">
+        <Eggs />
         <header className="mx-auto flex w-full max-w-[960px] items-center justify-between gap-4 px-4 py-4 font-mono text-sm">
           <Link href="/" className="font-bold">
             {site.name}
@@ -35,6 +38,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <a href={site.links.linkedin} {...ext}>
               linkedin
             </a>
+            <CrtToggle />
           </nav>
         </header>
 

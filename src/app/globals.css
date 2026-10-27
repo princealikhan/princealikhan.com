@@ -20,12 +20,19 @@
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 }
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg: var(--blue-900);
     --fg: var(--white);
     --fg-link: var(--white);
     --chrome: var(--white);
   }
+}
+/* `theme dark` in the terminal */
+:root[data-theme="dark"] {
+  --bg: var(--blue-900);
+  --fg: var(--white);
+  --fg-link: var(--white);
+  --chrome: var(--white);
 }
 
 /* ---- base ---------------------------------------------------------- */
@@ -106,13 +113,81 @@ a {
   background: var(--blue-700);
   border-color: var(--white);
 }
+/* window shade: click the title bar and the body rolls up into it */
+.shade {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 0.24s steps(4);
+}
 .window-body {
+  overflow: hidden;
+  min-height: 0;
+}
+.window-pad {
   padding: 24px;
+}
+.window[data-shaded] .shade {
+  grid-template-rows: 0fr;
+}
+.window[data-shaded] .titlebar {
+  border-bottom: 0;
+}
+.titlebar {
+  cursor: pointer;
 }
 .terminal .window-body {
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 15px;
   line-height: 1.7;
+}
+.term-input {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  caret-color: transparent;
+  min-width: 2ch;
+}
+.term-input:focus-visible {
+  outline: 0; /* the blinking block after it is the focus indicator */
+}
+.term-input::placeholder {
+  color: var(--blue-500);
+  opacity: 1;
+}
+
+/* easter eggs */
+.crt-toggle {
+  font: inherit;
+  color: var(--fg-link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 2px;
+  transition: background-color 0.12s ease, color 0.12s ease;
+}
+.crt-toggle[aria-pressed="true"] {
+  background: var(--fg-link);
+  color: var(--bg);
+  text-decoration: none;
+}
+.flip img {
+  transition: transform 0.2s steps(3);
+}
+.flip input:checked ~ img {
+  transform: scaleX(-1);
+}
+.shake {
+  animation: shake 0.4s steps(8);
+}
+html[data-crt] body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  background: repeating-linear-gradient(to bottom, rgba(13, 34, 128, 0.14) 0 1px, transparent 1px 3px);
+  animation: flicker 0.1s steps(2) infinite;
 }
 
 /* ---- button -------------------------------------------------------- */
@@ -237,6 +312,22 @@ a {
     transform: translateX(-50%);
   }
 }
+@keyframes shake {
+  25% {
+    transform: translate(-6px, 2px);
+  }
+  50% {
+    transform: translate(6px, -2px);
+  }
+  75% {
+    transform: translate(-4px, 0);
+  }
+}
+@keyframes flicker {
+  to {
+    opacity: 0.75;
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .boot,
@@ -247,8 +338,14 @@ a {
   .scan,
   .cursor::after,
   .halftone::before,
-  .marquee-track {
+  .marquee-track,
+  .shake,
+  html[data-crt] body::after {
     animation: none;
+  }
+  .shade,
+  .flip img {
+    transition: none;
   }
   .btn:active {
     transform: none;

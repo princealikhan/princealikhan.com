@@ -9,9 +9,10 @@ const TICK = 14; // ms per character
 
 /* Types `lines` character by character, once, on mount. Each line reserves its
    final height up front (invisible copy) so nothing shifts while typing. */
-export function Typewriter({ lines }: { lines: Line[] }) {
+export function Typewriter({ lines, cursor = true, onDone }: { lines: Line[]; cursor?: boolean; onDone?: () => void }) {
   const total = lines.reduce((n, l) => n + l.text.length + PAUSE, 0);
   const [n, setN] = useState(0);
+  const done = n >= total;
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -26,6 +27,10 @@ export function Typewriter({ lines }: { lines: Line[] }) {
     }, TICK);
     return () => window.clearInterval(id);
   }, [total]);
+
+  useEffect(() => {
+    if (done) onDone?.();
+  }, [done, onDone]);
 
   // which line the cursor sits on: the last line that has started
   let budget = n;
@@ -48,7 +53,7 @@ export function Typewriter({ lines }: { lines: Line[] }) {
             <span className="invisible" aria-hidden="true">
               {l.text}
             </span>
-            <span className={`absolute inset-0 ${i === cursorAt ? "cursor" : ""}`} aria-hidden="true">
+            <span className={`absolute inset-0 ${cursor && i === cursorAt ? "cursor" : ""}`} aria-hidden="true">
               {complete ? (l.node ?? l.text) : l.text.slice(0, shown)}
             </span>
           </div>

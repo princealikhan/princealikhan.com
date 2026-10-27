@@ -1,4 +1,5 @@
 import type { CSSProperties, ReactNode } from "react";
+import { TitleBar } from "./titlebar";
 
 export const ext = { target: "_blank", rel: "noreferrer" } as const;
 
@@ -19,11 +20,12 @@ export function Window({
 }) {
   return (
     <section className={`window ${dark ? "terminal" : ""} ${className}`} style={style} aria-label={title}>
-      <div className={`titlebar ${dark ? "dark" : ""}`} aria-hidden="true">
-        <span className="closebox" />
-        <span className="title">{title}</span>
+      <TitleBar title={title} dark={dark} />
+      <div className="shade">
+        <div className="window-body">
+          <div className={`window-pad ${bodyClass}`}>{children}</div>
+        </div>
       </div>
-      <div className={`window-body ${bodyClass}`}>{children}</div>
     </section>
   );
 }
@@ -42,6 +44,7 @@ const GLYPHS = {
   linkedin: ["xx......", "........", "xx..xxx.", "xx..x..x", "xx..x..x", "xx..x..x", "xx..x..x", "........"],
   github: ["..xxxx..", ".xxxxxx.", "xx.xx.xx", "xxxxxxxx", "x.xxxx.x", ".xxxxxx.", "..x..x..", "..x..x.."],
   folder: ["xxx.....", "x..xxxx.", "x......x", "x......x", "x......x", "x......x", "xxxxxxxx", "........"],
+  bomb: ["......x.", ".....x..", "....x...", "..xxxx..", ".xxxxxx.", "xxxxxxxx", "xxxxxxxx", ".xxxxxx."],
 } as const;
 
 export function PixelIcon({ name, size = 16 }: { name: keyof typeof GLYPHS; size?: number }) {
