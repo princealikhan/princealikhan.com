@@ -25,9 +25,9 @@ export const site = {
   firstShipped: "2014-03-01", // `uptime` in the terminal counts from here
   // what `ls Ls/` prints in the terminal
   ls: ["edumob e-learning (2014–15)", "stackin (2022–23)", "warpai (2025, pivoted into deepsmith)"],
-  // `fact` in the terminal picks one at random; `facts` lists them all. TODO: add your own.
+  // `facts` in the terminal lists these. TODO: add your own.
   facts: [
-    "ran a startup (edumob) and a day job (zoojoo.BE) at the same time, 2015–2017.",
+    "ran a startup (edumob) before any professional experience. shipped the first version during college.",
     "joined RoundGlass by being acquired, not by applying.",
     "one feature at zoojoo.BE, 'dares', racked up 186,000 one-to-one challenges in 6 months.",
     "52 corporate clients on one product, including HP, Accenture, Tesco, Bayer and JLL.",
@@ -35,9 +35,7 @@ export const site = {
     "has started four companies: edumob, stackin, OneJam, deepsmith. one exit so far.",
     "speaks Hindi and English. enough Tamil to carry an evening over drinks without feeling like an outsider. enough Kannada to order food and pass as one of your own.",
     "not a coffee person. a drink and a good laugh, yes. (type cheers.)",
-    "this site is three packages and one data file. the terminal is the biggest component.",
   ],
-
   now: [
     {
       url: "deepsmith.ai",

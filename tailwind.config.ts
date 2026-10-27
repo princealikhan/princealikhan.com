@@ -11,7 +11,6 @@ export default {
     extend: {
       colors: {
         ink: "var(--ink)",
-        paper: "var(--paper)",
         blue: {
           900: "var(--blue-900)",
           700: "var(--blue-700)",

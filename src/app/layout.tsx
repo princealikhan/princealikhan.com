@@ -11,12 +11,15 @@ const pixel = Silkscreen({ weight: "400", subsets: ["latin"], variable: "--font-
 const mono = IBM_Plex_Mono({ weight: ["400", "700"], subsets: ["latin"], variable: "--font-mono" });
 const sans = IBM_Plex_Sans({ weight: ["400", "500"], subsets: ["latin"], variable: "--font-sans" });
 
+// rendered once from the readme window; ask for a re-render if the name or bio changes
+const og = { url: "/og.png", width: 1200, height: 630, alt: `${site.name} — ${site.bio}` };
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: { default: site.name, template: `%s · ${site.name}` },
   description: site.bio,
-  openGraph: { title: site.name, description: site.bio, url: site.url, siteName: site.name, locale: "en_US", type: "website" },
-  twitter: { card: "summary_large_image", title: site.name, description: site.bio, creator: `@${site.handle}` },
+  openGraph: { title: site.name, description: site.bio, url: site.url, siteName: site.name, locale: "en_US", type: "website", images: [og] },
+  twitter: { card: "summary_large_image", title: site.name, description: site.bio, creator: `@${site.handle}`, images: [og] },
   robots: { index: true, follow: true },
 };
 

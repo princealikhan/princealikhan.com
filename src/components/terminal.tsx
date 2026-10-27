@@ -64,7 +64,7 @@ function run(input: string, fx: Fx): ReactNode[] {
         "files:  ls [dir]  cat <file>  tree  whoami  uptime  neofetch  history  clear",
         "links:  open <x|linkedin|github|deepsmith>  ping x",
         "looks:  theme <dark|light|system>  crt  flip  rollup",
-        "fun:    fact  facts  cowsay <text>  fortune  sl  git log  cheers  secret",
+        "fun:    facts  cowsay <text>  fortune  sl  git log  cheers  secret",
       ];
     case "ls":
       if (/^work/i.test(arg)) return site.work.map((w) => `${w.company}/  ${w.start}–${w.end}`);
@@ -100,7 +100,7 @@ function run(input: string, fx: Fx): ReactNode[] {
     case "uptime":
       return [uptime()];
     case "uname":
-      return ["prince os 1.0 · 1-bit · blue on paper · 3 packages"];
+      return ["prince os 1.0 · 1-bit · white on blue · 3 packages"];
     case "date":
       return [new Date().toString()];
     case "echo":
@@ -118,7 +118,7 @@ function run(input: string, fx: Fx): ReactNode[] {
         `uptime:     ${uptime()}`,
         "shell:      now.sh",
         "packages:   3 (next, react, react-dom)",
-        "resolution: blue on paper",
+        "resolution: white on blue",
         "cpu:        product + engineering",
         "gpu:        halftone",
       ];
@@ -155,11 +155,10 @@ function run(input: string, fx: Fx): ReactNode[] {
       return ["windows rolled. (click any title bar to do it by hand.)"];
     case "secret":
       return ["four more: click a title bar, click the portrait, leave the tab, visit a url that doesn't exist."];
+    case "facts":
     case "fact":
     case "fun":
     case "trivia":
-      return [site.facts[Math.floor(Math.random() * site.facts.length)]];
-    case "facts":
       return site.facts.map((f, i) => `${i + 1}. ${f}`);
     case "cowsay":
       return cowsay(arg);

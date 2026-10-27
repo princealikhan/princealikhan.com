@@ -31,7 +31,7 @@ export default function Page() {
   return (
     <main className="pb-8">
       {/* hero: the page's one overlapping composition */}
-      <section className="halftone py-10 sm:py-16" aria-label="intro">
+      <section className="py-8 sm:py-14" aria-label="intro">
         <div className="relative mx-auto max-w-[960px] px-4">
           <Window title="readme.txt" className="boot sm:mr-44" style={order(0)}>
             <h1 className="font-mono text-3xl font-bold leading-none sm:text-6xl">{site.name}</h1>
@@ -62,7 +62,7 @@ export default function Page() {
         </div>
       </section>
 
-      <div className="mx-auto mt-12 max-w-[760px] space-y-10 px-4">
+      <div className="mx-auto mt-4 max-w-[760px] space-y-10 px-4">
         <Window title="now.sh" dark className="boot" style={order(3)}>
           <Terminal lines={lines} />
           <div className="mt-5">

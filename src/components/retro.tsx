@@ -43,7 +43,6 @@ const GLYPHS = {
   x: ["x......x", ".x....x.", "..x..x..", "...xx...", "...xx...", "..x..x..", ".x....x.", "x......x"],
   linkedin: ["xx......", "........", "xx..xxx.", "xx..x..x", "xx..x..x", "xx..x..x", "xx..x..x", "........"],
   github: ["..xxxx..", ".xxxxxx.", "xx.xx.xx", "xxxxxxxx", "x.xxxx.x", ".xxxxxx.", "..x..x..", "..x..x.."],
-  folder: ["xxx.....", "x..xxxx.", "x......x", "x......x", "x......x", "x......x", "xxxxxxxx", "........"],
   bomb: ["......x.", ".....x..", "....x...", "..xxxx..", ".xxxxxx.", "xxxxxxxx", "xxxxxxxx", ".xxxxxx."],
 } as const;
 
