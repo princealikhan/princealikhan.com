@@ -1,197 +1,110 @@
-import { HackathonCard } from "@/components/hackathon-card";
-import BlurFade from "@/components/magicui/blur-fade";
-import BlurFadeText from "@/components/magicui/blur-fade-text";
-import { ProjectCard } from "@/components/project-card";
-import { ResumeCard } from "@/components/resume-card";
-import { WorkExperience } from "@/components/work-experience-card";
+import type { CSSProperties } from "react";
+import Image from "next/image";
+import { Button, PixelIcon, Window, ext } from "@/components/retro";
+import { Typewriter, type Line } from "@/components/typewriter";
+import { site } from "@/data/site";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { DATA } from "@/data/resume";
-import Link from "next/link";
-import Markdown from "react-markdown";
-import { MarqueeDemo } from "@/components/tesxt";
-import { CheckIcon } from "lucide-react";
-import { BLUR_FADE_DELAY, classNames } from "@/lib/utils";
-import { SparklesText } from "@/components/magicui/sparkles-text";
-import { NumberTicker } from "@/components/magicui/number-ticker";
-import { BentoDemo } from "@/components/new-maal";
-import { ShineBorder } from "@/components/magicui/shine-border";
-import { RainbowButton } from "@/components/magicui/rainbow-button";
+const order = (i: number) => ({ "--i": i }) as CSSProperties;
 
 export default function Page() {
+  const now = site.now.filter((n) => !n.hidden);
+  const lines: Line[] = [
+    { text: "$ cat now.txt" },
+    ...now.map((n) => {
+      const tail = ` — ${n.line} ${n.role}. [${n.status}]`;
+      return {
+        text: `> ${n.url}${tail}`,
+        node: (
+          <>
+            {"> "}
+            <a href={`https://${n.url}`} {...ext}>
+              {n.url}
+            </a>
+            {tail}
+          </>
+        ),
+      };
+    }),
+    { text: "$ " },
+  ];
+
   return (
-    <main className="max-w-4xl mx-auto py-12 sm:py-24 px-6 min-h-[100dvh] space-y-10">
-      <div className="mx-auto gap-6 grid grid-cols-1 items-center">
-        <div className="space-y-10">
-          <section id="hero">
-            <div className="mx-auto w-full space-y-8">
-              <div className="gap-2 flex justify-between">
-                <div className="flex-col flex flex-1 space-y-1.5">
-                  <BlurFadeText
-                    delay={BLUR_FADE_DELAY}
-                    className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
-                    yOffset={8}
-                    text={`Hi, I'm ${DATA.name.split(" ")[0]} 👋`}
-                  />
-                  {/* <SparklesText
-                    className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
-                    text={`Hi, I'm ${DATA.name.split(" ")[0]} 👋`}
-                  /> */}
-                  {/* <NumberTicker
-                          className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
-                          value={856} decimalPlaces={1}  /> */}
-
-                  <BlurFadeText
-                    className="max-w-[600px] md:text-xl"
-                    delay={BLUR_FADE_DELAY}
-                    text={DATA.description}
-                  />
-                </div>
-                <BlurFade delay={BLUR_FADE_DELAY}>
-                  <Avatar className="size-28 border">
-                    <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
-                    <AvatarFallback>{DATA.initials}</AvatarFallback>
-                  </Avatar>
-                </BlurFade>
-              </div>
+    <main className="pb-8">
+      {/* hero: the page's one overlapping composition */}
+      <section className="halftone py-10 sm:py-16" aria-label="intro">
+        <div className="relative mx-auto max-w-[960px] px-4">
+          <Window title="readme.txt" className="boot sm:mr-44" style={order(0)}>
+            <h1 className="font-mono text-3xl font-bold leading-none sm:text-6xl">{site.name}</h1>
+            <p className="mt-5 max-w-[560px] text-lg">{site.bio}</p>
+            <p className="mt-4 font-mono text-sm">{site.proof.join(" · ")}</p>
+            <div className="mt-6 flex flex-wrap gap-4">
+              <Button href={site.links.x}>
+                <PixelIcon name="x" />
+                follow on x
+              </Button>
+              <Button href={site.links.linkedin}>
+                <PixelIcon name="linkedin" />
+                linkedin
+              </Button>
             </div>
-          </section>
-          <section id="about">
-            <BlurFade delay={BLUR_FADE_DELAY * 3}>
-              <h2 className="mb-2 text-xl font-medium">About Me</h2>
-            </BlurFade>
-            <BlurFade delay={BLUR_FADE_DELAY * 4}>
-              <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
-                {DATA.summary}
-              </Markdown>
-            </BlurFade>
-{/* 
-            {DATA.resume && (
-              <BlurFade delay={BLUR_FADE_DELAY * 5}>
-                <a href={DATA.resume} download="cv">
-                  <RainbowButton className="mt-4 h-10 px-4  text-sm">
-                    Download Resume
-                  </RainbowButton>
-                </a>
-              </BlurFade>
-            )} */}
-          </section>
-  
-
-          {/* <section>
-            <BlurFade delay={BLUR_FADE_DELAY * 6}>
-              <h2 className="text-xl font-medium">
-                Check out my latest work
-              </h2>
-            </BlurFade>
-           
-            <section id="projects">
-              <div className="space-y-12 w-full py-4">
-                <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 mx-auto">
-                  {DATA.projects.map((project: any, id) => (
-                    <BlurFade
-                      key={project.title}
-                      delay={BLUR_FADE_DELAY * 12 + id * 0.05}
-                    >
-                      <ProjectCard
-                        href={project.href}
-                        key={project.title}
-                        title={project.title}
-                        description={project.description}
-                        dates={project.dates}
-                        tags={project.technologies}
-                        image={project.image}
-                        video={project.video}
-                        links={project.links}
-                      />
-                    </BlurFade>
-                  ))}
-                </div>
-              </div>
-            </section>
-          </section> */}
-
-          <section id="skills">
-            <div className="flex min-h-0 flex-col gap-y-3">
-              <BlurFade delay={BLUR_FADE_DELAY * 7}>
-                <h2 className="text-xl font-medium">Skills</h2>
-              </BlurFade>
-              <div className="flex flex-wrap gap-1">
-                {DATA.skills.map((skill, id) => (
-                  <BlurFade
-                    key={skill}
-                    delay={BLUR_FADE_DELAY * 10 + id * 0.05}
-                  >
-                    <Badge key={skill}>{skill}</Badge>
-                  </BlurFade>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          <section id="work">
-            <div className="flex min-h-0 flex-col gap-y-3">
-              <BlurFade delay={BLUR_FADE_DELAY * 8}>
-                <h2 className="text-xl font-medium">Work Experience</h2>
-              </BlurFade>
-              {DATA.work.map((work: any, id) => (
-                <BlurFade
-                  key={work.company}
-                  delay={BLUR_FADE_DELAY * 6 + id * 0.05}
-                >
-                  <WorkExperience
-                    key={id}
-                    logoUrl={work.logoUrl}
-                    altText={work.company}
-                    title={work.title}
-                    company={work.company}
-                    location={work.location}
-                    href={work.href}
-                    badges={work.badges}
-                    period={`${work.start} - ${work.end ?? "Present"}`}
-                    descriptions={work.descriptions}
-                    highlight={work.highlight}
-                  />
-                </BlurFade>
-              ))}
-            </div>
-          </section>
-          {/* <section id="education">
-            <div className="flex min-h-0 flex-col gap-y-3">
-              <BlurFade delay={BLUR_FADE_DELAY * 9}>
-                <h2 className="text-xl font-medium">Education</h2>
-              </BlurFade>
-              {DATA.education.map((education: any, id) => (
-                <BlurFade
-                  key={education.school}
-                  delay={BLUR_FADE_DELAY * 8 + id * 0.05}
-                >
-                  <ResumeCard
-                    key={education.school}
-                    href={education.href}
-                    logoUrl={education.logoUrl}
-                    altText={education.school}
-                    title={education.school}
-                    subtitle={education.degree}
-                    description={education.description}
-                    period={`${education.start} - ${education.end}`}
-                  />
-                </BlurFade>
-              ))}
-            </div>
-          </section> */}
+          </Window>
+          <Window
+            title="me.png"
+            className="boot mt-6 w-44 sm:absolute sm:-top-8 sm:right-4 sm:mt-0 sm:w-52"
+            bodyClass="!p-2"
+            style={order(2)}
+          >
+            <Image src="/me.jpg" alt={site.name} width={400} height={400} priority className="scan block w-full" />
+          </Window>
         </div>
+      </section>
+
+      <div className="mx-auto mt-12 max-w-[760px] space-y-10 px-4">
+        <Window title="now.sh" dark className="boot" style={order(3)}>
+          <Typewriter lines={lines} />
+          <div className="mt-5">
+            <Button href={site.links.x}>
+              <PixelIcon name="x" />
+              follow the build on x
+            </Button>
+          </div>
+        </Window>
+
+        <Window title="work" className="reveal">
+          <ol className="space-y-6">
+            {site.work.map((w) => (
+              <li key={w.company} className="reveal">
+                <div className="font-mono text-sm">
+                  {w.href ? (
+                    <a href={w.href} {...ext}>
+                      {w.company}
+                    </a>
+                  ) : (
+                    w.company
+                  )}
+                  {` · ${w.role} · ${w.start}–${w.end}`}
+                </div>
+                <p className="mt-1">{w.line}</p>
+              </li>
+            ))}
+          </ol>
+        </Window>
+
+        <Window title="skills.sh" dark className="reveal">
+          <div>$ tree skills/</div>
+          <div>skills/</div>
+          {site.skills.map((g, i) => (
+            <div key={g.dir} className="reveal grid sm:grid-cols-[20ch_1fr]">
+              <span className="sm:pr-4">
+                {i === site.skills.length - 1 ? "└── " : "├── "}
+                {g.dir}/
+              </span>
+              <span className="pl-8 sm:pl-0">{g.items.join(", ")}</span>
+            </div>
+          ))}
+          <div className="cursor">$ </div>
+        </Window>
       </div>
-
-      {/* <ShineBorder
-      className="relative flex h-[300px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl"
-      color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
-    >
-           <MarqueeDemo />
-
-    </ShineBorder>
-      <BentoDemo/>        */}
     </main>
   );
 }

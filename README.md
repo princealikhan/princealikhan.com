@@ -1,31 +1,10 @@
-# Getting Started Locally
+# princealikhan.com
 
-1. Clone this repository to your local machine:
+Next.js 14 + Tailwind. No other runtime deps.
 
-   ```bash
-   git clone 
-   ```
+```bash
+pnpm install
+pnpm dev
+```
 
-2. Move to the cloned directory
-
-   ```bash
-   cd portfolio
-   ```
-
-3. Install dependencies:
-
-   ```bash
-   pnpm install
-   ```
-
-4. Start the local Server:
-
-   ```bash
-   pnpm dev
-   ```
-
-5. Open the [Config file](./src/data/resume.tsx) and make changes
-
-# License
-
-Licensed under the [MIT license](https://github.com/dillionverma/portfolio/blob/main/LICENSE.md).
+All content lives in `src/data/site.ts`. The window / button / icon pieces are in `src/components/retro.tsx`; the design tokens and motion are in `src/app/globals.css`. The OG image is rendered at build from `src/app/opengraph-image.tsx`.
