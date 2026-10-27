@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "vercel --prod --global-config ~/.vercel-personal"
+    "deploy": "set -a && . ./.env && set +a && vercel deploy --prod --yes --scope prince-ali-khans-projects --token \"$VERCEL_TOKEN\""
   },
   "dependencies": {
     "next": "14.2.4",

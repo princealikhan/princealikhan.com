@@ -12,7 +12,7 @@ type SkillGroup = { dir: string; items: string[] };
 export const site = {
   name: "Prince Ali Khan",
   handle: "PrinceAliKhan_",
-  url: "https://princealikhan.com",
+  url: "https://www.princealikhan.com",
   bio: "co-founder at deepsmith.ai. 12+ years of building and shipping products.",
   location: "bengaluru",
   links: {
